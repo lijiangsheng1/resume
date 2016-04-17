@@ -1,0 +1,322 @@
+% (c) 2002 Matthew Boedicker <mboedick@mboedick.org> (original author) http://mboedick.org
+
+% (c) 2003-2007 David J. Grant <davidgrant-at-gmail.com> http://www.davidgrant.ca
+
+% (c) 2008 Nathaniel Johnston <nathaniel@nathanieljohnston.com> http://www.nathanieljohnston.com
+
+% (c) 2011 Scott Clark <sc932@cornell.edu> http://cam.cornell.edu/~sc932
+%
+
+%This work is licensed under the Creative Commons Attribution-Noncommercial-Share Alike 2.5 License. To view a copy of this license, visit http://creativecommons.org/licenses/by-nc-sa/2.5/ or send a letter to Creative Commons, 543 Howard Street, 5th Floor, San Francisco, California, 94105, USA.
+
+\documentclass[letterpaper,11pt]{article}
+%\documentclass[12pt,a4paper,UTF8,adobefonts]{ctexart}
+
+\newlength{\outerbordwidth}
+
+\pagestyle{empty}
+
+\raggedbottom
+
+\raggedright
+
+\usepackage[svgnames]{xcolor}
+
+\usepackage{framed}
+
+\usepackage{tocloft}
+
+%-----------------------------------------------------------
+% chinese font setting
+\usepackage[utf8]{inputenc}
+\usepackage{fontspec,xunicode}
+%% \usepackage[slantfont, boldfont, CJKtextspaces, CJKmathspaces]{xeCJK} % 允许斜体和粗体
+\usepackage[slantfont,boldfont]{xeCJK} % 允许斜体和粗体
+% \usepackage[SlantFont,BoldFont,CJKtextspaces,CJKmathspaces]{xeCJK} % 允许斜体和粗体
+\setCJKmainfont{WenQuanYi Micro Hei} % 设置缺省中文字体
+\setCJKmonofont{WenQuanYi Micro Hei Mono} % 设置等宽字体
+\setmainfont{Tahoma} % 英文衬线字体
+\setsansfont{Tahoma} % 英文无衬线字体
+\setmonofont{Monaco} % 英文等宽字体
+\usepackage{indentfirst} % 首段缩进
+\defaultfontfeatures{Mapping=tex-text} %如果没有它，会有一些 tex 特殊字符无法正常使用，比如连字符。
+% 中文断行
+\XeTeXlinebreaklocale "zh"
+\XeTeXlinebreakskip = 0pt plus 1pt minus 0.1pt
+
+%Edit these values as you see fit
+
+\setlength{\outerbordwidth}{3pt}  % Width of border outside of title bars
+
+\definecolor{shadecolor}{gray}{0.75}  % Outer background color of title bars (0 = black, 1 = white)
+
+\definecolor{shadecolorB}{gray}{0.93}  % Inner background color of title bars
+
+%-----------------------------------------------------------
+
+%Margin setup
+
+\setlength{\evensidemargin}{-0.25in}
+
+\setlength{\headheight}{-0.25in}
+
+\setlength{\headsep}{0in}
+
+\setlength{\oddsidemargin}{-0.25in}
+
+\setlength{\paperheight}{11in}
+
+\setlength{\paperwidth}{8.5in}
+
+\setlength{\tabcolsep}{0in}
+
+\setlength{\textheight}{9.75in}
+
+\setlength{\textwidth}{7in}
+
+\setlength{\topmargin}{-0.3in}
+
+\setlength{\topskip}{0in}
+
+\setlength{\voffset}{0.1in}
+
+%-----------------------------------------------------------
+
+%Custom commands
+
+\newcommand{\resitem}[1]{\item #1 \vspace{-2pt}}
+
+\newcommand{\resheading}[1]{\vspace{8pt}
+
+  \parbox{\textwidth}{\setlength{\FrameSep}{\outerbordwidth}
+
+    \begin{shaded}
+
+\setlength{\fboxsep}{0pt}\framebox[\textwidth][l]{\setlength{\fboxsep}{4pt}\fcolorbox{shadecolorB}{shadecolorB}{\textbf{\sffamily{\mbox{~}\makebox[6.762in][l]{\large #1} \vphantom{p\^{E}}}}}}
+
+    \end{shaded}
+
+  }\vspace{-5pt}
+
+}
+
+\newcommand{\ressubheading}[4]{
+
+\begin{tabular*}{6.5in}{l@{\cftdotfill{\cftsecdotsep}\extracolsep{\fill}}r}
+
+		\textbf{#1} & #2 \\
+
+		\textit{#3} & \textit{#4} \\
+
+\end{tabular*}\vspace{-6pt}}
+
+%-----------------------------------------------------------
+
+\begin{document}
+
+\begin{tabular*}{7in}{l@{\extracolsep{\fill}}r}
+
+\textbf{\Large 李建盛} & \textbf{birthday:1982/4} \\
+
+lijiangsheng1@gmail.com \\
+slideshare:johnwoolee & mobile:+86 18910219825\\
+twitter:lijiangsheng1 \\
+
+\end{tabular*}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\resheading{Education}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\begin{itemize}
+
+\item
+
+	\ressubheading{School Of Distance Learning Peking University}{Beijing}{B.S. Computer Science}{2008 - 2012}
+
+	\begin{itemize}
+
+		\resitem{}
+
+
+	\end{itemize}
+
+\item
+
+	\ressubheading{ZhongZhou University}{ZhengZhou,henan}{Associate Technology of Network}{2002 - 2005}
+
+	\begin{itemize}
+
+		\resitem{Strong emphasis on scientific computing, network tech. and software development}
+
+	\end{itemize}
+
+\end{itemize}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\resheading{Skills}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\begin{itemize}
+
+\item Ten years Linux user and 5 years developer.
+
+\item {\bf Development:} Python/Perl/Ruby, C, Java, bash, xml
+
+\item {\bf Computer Science:} Operating Systems, Cluster(HA,LB,Distributed), TCP/IP protocols,
+
+\item {\bf IT architecture:} LAMP J2EE SOA 
+
+\item {\bf Cloud computing:} OpenStack,Eucalyptus,OpenNebula,CloudStack,Aeolus (install,deploy and troubeshooting)
+
+\item {\bf Virtualization:} KVM,qemu,Ovirt,libvirt
+
+\item {\bf Storage:} SAN/NAS, LVM,Distributed/Object file system
+
+\item {\bf OpenSouce Project:} xCat,zenoss,PostgreSQL,JBoss(wildfly)
+
+\item Discovering and implementing new ideas. Hacking.
+
+\item I have worked in many places in a myriad of fields. I can readily learn and adapt to a new discipline, area or environment and start pushing real results quickly.
+
+\end{itemize}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\resheading{Research and Work Experience}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\begin{itemize}
+
+\item
+
+	\ressubheading{cloud-times Inc}{Beijing}{Development Manager}{Jun 2011 - current}
+
+	\begin{itemize}
+
+		\resitem{Build strong high performance developer team.}
+                \resitem{Based Linux Virtualization tech. KVM, and SPICE project.}
+        \resitem{Active in Open Source community, Like \texttt{Ovirt,libivrt,glusterFS} etc.Community-based development model, reference fedora/RHEL model, and encourage team members to participate in community development.}
+                \resitem{Practice of Scurm/XP/Agile.}
+                \resitem{used git+trac+jenkins for project management.}
+                \resitem{extend project: Customized Linux operating systems for thin client, based OpenSuse build service platforms.}
+
+	\end{itemize}
+
+\item
+
+	\ressubheading{iSoft Inc}{Beijing}{Senior Software Engineer}{Mar 2010 - Jun 2011}
+
+	\begin{itemize}
+
+		\resitem{The IAAS platform demand analysis, open source selection, team building, process definition, refactoring etc.}
+
+                \resitem{To the magazine 《Linux Pilot》 published about Eucalyptus and Convirt. based research/test.}
+
+                \resitem{used program language: \texttt{Java},\texttt{C},\texttt{python},\texttt{bash}}
+               
+               \resitem{Version control: SVN. library: gcc/glib/libxml/libvirt/ etc based open source software: CloudStack,libvirt,OpenVSwitch,iptables etc.}
+
+	\end{itemize}
+
+\item
+
+	\ressubheading{RedFlag co.ltd., }{Beijing}{Software Engineer}{Jun 2008 - Mar 2010}
+
+	\begin{itemize}
+
+		\resitem{Responsible for Red Flag Linux server operating system installation,high-availability cluster software development.}
+
+    \resitem{used program language: \texttt{C},\texttt{python/bash}}
+    \resitem{Version control: SVN/mercurial}
+    \resitem{library: gcc/glib/libxml etc}
+    \resitem{based open source software: anaconda/heartbeat/peacemaker}
+    \resitem{and a some research/test system: Hudoop, Virtualization, and port XtreemOS from slackware to Redflag.}
+
+	\end{itemize}
+
+\item 
+
+	\ressubheading{RedFlag co.ltd.,}{Beijing}{Technical Support/Maintenance Engineer}{Nov 2006 - Jun 2008}
+
+	\begin{itemize}
+
+		\resitem{Tech. Support for RedFlag enterprise linux, Deployment, troubleshooting, training, solutions for customer.}
+
+    \resitem{project experience:}
+    \resitem{0、Deployment: China Postal Savings Bank pre-server, China Postal UnionPay, National Weather Service HA cluster, China Post philatelic system HA Cluster}
+    \resitem{1、Troubleshooting:China Postal Center, The Yunnan Agricultural Bankcheck system HA,}
+    \resitem{2、solutions: China Postal Savings Bank Share file system ,China Postal Disaster system SCSI device bonding.}
+
+	\end{itemize}
+
+\item
+
+	\ressubheading{Henan Newspapering Network Center(dahe.cn)}{ZhengZhou, henan}{Infrastructure Management}{Jun 2005 - Oct 2006}
+
+	\begin{itemize}
+
+		\resitem{outine maintenance, include X86 arch hardware, OS(Redhat/RedFlag linux, Windows server 2003),DNS(bind), Web server(apahce,IIS,Tomcat),Application Server(weblogic,websphere)RDBMS(MySQL,SQL server,DB2)and website application (CMS, Search, video, etc.)}
+
+	\end{itemize}
+
+\item
+
+
+\end{itemize}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\resheading{Participation in Workshops and Conferences}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\begin{itemize}
+\item
+	\ressubheading{BPUG 2010}{douban, beijing}{Python in Virtualization}{November 18, 2010}
+\item
+	\ressubheading{Cloud Valley World 2012}{beijing, China}{How to build geeks team}{Decmber 13, 2012}
+\end{itemize}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\resheading{Selected Open Source Projects and Publications {\mdseries(github.com/lijiangsheng1)}}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\begin{itemize}
+
+\item \ressubheading{OVDG: Open Virtualization Develop Guide}{xml, xslt,bash}{the book for junior developer}{2012 - Current}
+
+  \begin{itemize}
+
+    \resitem{based docbook for book}
+
+    \resitem{in Chinese publican,No one book about virtulaization write for junior developer.}
+
+	\end{itemize}
+
+\item \ressubheading{glusterfs-appliance}{Python, Bash, Perl}{A project forked RedHat Storage}{2013 - Current}
+
+  \begin{itemize}
+
+		\resitem{centos + glusterfs packages(node + management) -- rpm repo -- kickstart file -- imagefacory -- appliance(ec2,openstack,ovirt,vshpere etc.)}
+
+	\end{itemize}
+
+
+\end{itemize}
+
+\resheading{Personal}
+
+\begin{itemize}
+
+\item {\bf Hobbies:} Reading,Movies and drinking good beer or scotch with new and old friends.
+
+\item {\bf My Ideal Position:} Working with a fun team solving interesting problems. I enjoy every part of development, from deep backend optimization to client-facing applications and interaction. 
+
+\end{itemize}
+
+\end{document}
